@@ -1,75 +1,153 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuriya Fashion</title>
+  <title>Nuriya Fashion - Ecommerce</title>
   <style>
-    body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; color: #333; }
-    header { position: relative; text-align: center; color: white; }
-    header img { width: 100%; height: auto; max-height: 400px; object-fit: cover; }
-    header h1 { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 3em; background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 8px; }
-    nav { background: #111; padding: 10px; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { color: #ff4081; }
-    .container { padding: 20px; }
-    h2 { border-left: 5px solid #ff4081; padding-left: 10px; margin-top: 40px; }
-    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-    .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
-    .card:hover { transform: translateY(-5px); }
-    .card img { width: 100%; height: 250px; object-fit: cover; }
-    .card-content { padding: 15px; }
-    .card-content h3 { margin: 0 0 10px; font-size: 18px; color: #111; }
-    .price { color: #2e7d32; font-size: 18px; font-weight: bold; margin: 10px 0; }
-    .btn { display: inline-block; background: #25d366; color: white; padding: 10px 15px; border-radius: 6px; text-decoration: none; font-weight: bold; }
-    .btn:hover { background: #128c7e; }
-    footer { text-align: center; background: #111; color: white; padding: 15px; margin-top: 40px; }
-    @media(max-width: 768px) {
-      header h1 { font-size: 2em; }
-      .card img { height: 200px; }
-    }
+    body {font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7;}
+    header {background:#111; color:#fff; text-align:center; padding:20px;}
+    header h1 {margin:0; font-size:28px;}
+    header p {margin:5px 0 0;}
+    nav {background:#ff4081; padding:10px; text-align:center;}
+    nav a {color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
+    .container {padding:20px;}
+    h2 {margin:20px 0; font-size:22px; border-left:5px solid #ff4081; padding-left:10px;}
+    .products {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;}
+    .card {background:#fff; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); overflow:hidden; transition:0.3s;}
+    .card:hover {transform:translateY(-5px);}
+    .card img {width:100%; height:300px; object-fit:cover;}
+    .card-body {padding:15px;}
+    .card-body h3 {margin:0; font-size:18px; color:#333;}
+    .price {color:#ff4081; font-weight:bold; font-size:18px; margin:10px 0;}
+    .details {font-size:14px; color:#666;}
+    .btn {display:inline-block; margin-top:10px; padding:10px 15px; background:#ff4081; color:#fff; border:none; border-radius:5px; text-decoration:none; font-size:14px; cursor:pointer;}
+    .btn:hover {background:#e73370;}
+    #cart, #checkout {display:none; background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin-top:20px;}
+    footer {background:#111; color:#fff; text-align:center; padding:15px; margin-top:30px; font-size:14px;}
+    input, textarea, select {width:100%; padding:8px; margin:5px 0 10px; border:1px solid #ccc; border-radius:5px;}
   </style>
 </head>
 <body>
-  <!-- Banner -->
+
   <header>
-    <img src="https://source.unsplash.com/1600x400/?fashion,clothing,style" alt="Fashion Banner">
     <h1>Nuriya Fashion</h1>
+    <p>Trendy & Affordable Clothing</p>
   </header>
 
-  <!-- Navigation -->
   <nav>
-    <a href="#lycra">Lycra Bottoms</a>
-    <a href="#hoodie">Fleece Hoodies</a>
+    <a href="#" onclick="showSection('products')">Products</a>
+    <a href="#" onclick="showSection('cart')">Cart</a>
+    <a href="#" onclick="showSection('checkout')">Checkout</a>
   </nav>
 
-  <div class="container">
-    <!-- Lycra Bottoms -->
-    <h2 id="lycra">Lycra Bottom Wear (₹399)</h2>
+  <div class="container" id="products">
+
+    <!-- Lycra Bottom -->
+    <h2>Lycra Bottoms</h2>
     <div class="products">
-      <div class="card"><img src="https://drive.google.com/uc?id=1X9ZnAH4sxceLNkGsdfY7sHBBRLawG0mg"><div class="card-content"><h3>Light Grey Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Light%20Grey%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1W-PkPRptxhaxC_QK19GXDXbyL-9NT6oo"><div class="card-content"><h3>Dark Grey Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Dark%20Grey%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1oARjE2Y2MWGDzd4AAvqSgPDkDd2DHDiy"><div class="card-content"><h3>Maroon Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Maroon%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1I0BWWxlgzrQk3vP1g782Xm9ThBoTkefh"><div class="card-content"><h3>Wine Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Wine%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1NuOi7jcM7RZE14pHVSAhK6c0hXRHcO5j"><div class="card-content"><h3>Black Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Black%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1Zbu6Q0r6ace0X5ga5gqCeDJJ4wmWV6fJ"><div class="card-content"><h3>Rani Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Rani%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1kGm63iGyGlSqybx9sva9TISVOO3a7vZa"><div class="card-content"><h3>Lavender Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Lavender%20Lycra">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1VkhaRsxAl5p81Olcyy7gJ9HOduXCMHRc"><div class="card-content"><h3>Navy Lycra</h3><p>Fabric: Lycra<br>Size: 26-32</p><p class="price">₹399</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Navy%20Lycra">Order on WhatsApp</a></div></div>
+      <div class="card">
+        <img src="https://drive.google.com/uc?export=view&id=17U0uOIxjBwIZlJEDHjvm_GtB2ytVaR_C" alt="Lycra Bottom">
+        <div class="card-body">
+          <h3>Stylish Lycra Bottoms</h3>
+          <p class="price">₹399</p>
+          <p class="details">Fabric: Lycra<br>Net Quantity: 1<br>Sizes: 26, 28, 30, 32</p>
+          <button class="btn" onclick="addToCart('Lycra Bottom', 399)">Add to Cart</button>
+        </div>
+      </div>
     </div>
 
-    <!-- Hoodies -->
-    <h2 id="hoodie">Fleece Printed Hoodies (₹499)</h2>
+    <!-- Hoodie -->
+    <h2>Printed Hoodies</h2>
     <div class="products">
-      <div class="card"><img src="https://drive.google.com/uc?id=1Xr8ZIM9K7zVztl0Z9QOpYooKtNhhnClY"><div class="card-content"><h3>Printed Hoodie</h3><p>Fabric: Fleece<br>Size: S-XXL</p><p class="price">₹499</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Fleece%20Hoodie">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1zMO7YVDPEDH8r94Aluo29ygIzfzRLGU_"><div class="card-content"><h3>Printed Hoodie</h3><p>Fabric: Fleece<br>Size: S-XXL</p><p class="price">₹499</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Fleece%20Hoodie">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1ORpTB0c51PfflRd2wH8rcAVVXKEQQTue"><div class="card-content"><h3>Printed Hoodie</h3><p>Fabric: Fleece<br>Size: S-XXL</p><p class="price">₹499</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Fleece%20Hoodie">Order on WhatsApp</a></div></div>
-      <div class="card"><img src="https://drive.google.com/uc?id=1G88GLVBZVIc0tpE_bu3vqA9-aAmaJCr-"><div class="card-content"><h3>Printed Hoodie</h3><p>Fabric: Fleece<br>Size: S-XXL</p><p class="price">₹499</p><a class="btn" href="https://wa.me/917260026995?text=Order%20Fleece%20Hoodie">Order on WhatsApp</a></div></div>
+      <div class="card">
+        <img src="https://drive.google.com/uc?export=view&id=14DoaX56WlLAc5od7xO8fZlvINHCYuWP1" alt="Hoodie">
+        <div class="card-body">
+          <h3>Trendy Printed Hoodie</h3>
+          <p class="price">₹499</p>
+          <p class="details">Fabric: Fleece<br>Sleeve Length: Long Sleeves<br>Sizes: S, M, L, XL, XXL</p>
+          <button class="btn" onclick="addToCart('Printed Hoodie', 499)">Add to Cart</button>
+        </div>
+      </div>
     </div>
+
   </div>
 
-  <!-- Footer -->
+  <div class="container" id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <button class="btn" onclick="showSection('checkout')">Proceed to Checkout</button>
+  </div>
+
+  <div class="container" id="checkout">
+    <h2>Checkout</h2>
+    <form onsubmit="placeOrder(event)">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="mobile" placeholder="Mobile Number" required>
+      <textarea id="address" placeholder="Full Address" required></textarea>
+      <input type="text" id="pincode" placeholder="Pincode" required>
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+  </div>
+
   <footer>
-    <p>© 2025 Nuriya Fashion | Contact: +91 7260026995</p>
+    © 2025 Nuriya Fashion | All Rights Reserved
   </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(product, price) {
+      cart.push({product, price});
+      alert(product + " added to cart!");
+    }
+
+    function showSection(id) {
+      document.getElementById('products').style.display = 'none';
+      document.getElementById('cart').style.display = 'none';
+      document.getElementById('checkout').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+
+      if(id === 'cart') renderCart();
+    }
+
+    function renderCart() {
+      let container = document.getElementById('cart-items');
+      container.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, index) => {
+        container.innerHTML += `<p>${item.product} - ₹${item.price}</p>`;
+        total += item.price;
+      });
+      container.innerHTML += `<h3>Total: ₹${total}</h3>`;
+    }
+
+    function placeOrder(e) {
+      e.preventDefault();
+      let name = document.getElementById('name').value;
+      let mobile = document.getElementById('mobile').value;
+      let address = document.getElementById('address').value;
+      let pincode = document.getElementById('pincode').value;
+
+      let orderDetails = "New Order from Nuriya Fashion%0A";
+      orderDetails += "Name: " + name + "%0A";
+      orderDetails += "Mobile: " + mobile + "%0A";
+      orderDetails += "Address: " + address + "%0A";
+      orderDetails += "Pincode: " + pincode + "%0A%0A";
+      orderDetails += "Products:%0A";
+
+      let total = 0;
+      cart.forEach(item => {
+        orderDetails += "- " + item.product + " (₹" + item.price + ")%0A";
+        total += item.price;
+      });
+      orderDetails += "%0ATotal: ₹" + total;
+
+      let whatsappURL = "https://wa.me/917260026995?text=" + orderDetails;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+
 </body>
 </html>
